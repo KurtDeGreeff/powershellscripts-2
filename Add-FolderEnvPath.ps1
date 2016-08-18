@@ -25,7 +25,7 @@
     Author: Bevin Du Plessis
 
     .LINK
-    None
+    https://github.com/nightshade2109/powershellscripts
 
     .INPUTS
     [string]
@@ -41,7 +41,7 @@
     [Parameter(ParameterSetName = 'Version')]
     [switch]$Version,
     [Parameter(Mandatory = $true,Position = 0,ValueFromPipeline = $true, ParameterSetName = 'PathToAdd')]
-    [string] $PathToAdd = "$env:ScriptsDir\Utilities"
+    [string] $PathToAdd
   )
 
   Begin
