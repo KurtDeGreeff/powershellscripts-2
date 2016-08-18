@@ -96,7 +96,7 @@ Function Add-FolderEnvPath
         [string[]]$EnvPaths = ($env:path).split(';')
         [bool]$PathAlreadyExists = $false
         [string]$FinalEnvPath = $null
-        
+        [string[]]$PathsToCheck = $null
             
         # Build possible combinations of paths to check with or without slashes
         $PathLastCharacter = $Path[-1]
@@ -110,14 +110,13 @@ Function Add-FolderEnvPath
           $PathsToCheck += $(Join-Path -Path $Path -ChildPath '\')
           $PathsToCheck += $Path
         }
-        
-        
-        
-      
+
         Foreach ($EnvPath in $EnvPaths) 
         {
         
           Foreach ($PathToCheck in $PathsToCheck) {
+          
+         Write-Verbose -Message "Comparing Path: $EnvPath to $PathToCheck"
           
             if($EnvPath -ieq $PathToCheck) 
             {
@@ -182,7 +181,6 @@ Function Add-FolderEnvPath
   }
   End
   {
-    Update-EnvVarsForSession
     Write-Verbose -Message "Ending $($MyInvocation.Mycommand)"
   }
 }
