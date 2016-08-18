@@ -129,7 +129,7 @@
           $Result = New-Object -TypeName PSObject -Property @{
             Output = $FinalPath
           }
-          #[Environment]::SetEnvironmentVariable('path',$NewPath, 'Machine')
+          [Environment]::SetEnvironmentVariable('path',$NewPath, 'Machine')
         }
         else 
         {
