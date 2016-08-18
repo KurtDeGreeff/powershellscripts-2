@@ -1,4 +1,4 @@
-﻿Function Add-FolderEnvPath
+Function Add-FolderEnvPath
 {
   <#
     .SYNOPSIS
@@ -83,20 +83,20 @@
       {
       
       
-      If(Test-Path -Path $PathToAdd) {
+        If(Test-Path -Path $PathToAdd) {
       
-        Write-Verbose -Message "Path $PathToAdd is valid continuing"
+          Write-Verbose -Message "Path $PathToAdd is valid continuing"
       
-      } else {
-        Write-Warning -Message "Path $PathToAdd is not valid"
-        break
-      }
-      
-      
+        } else {
+          Write-Warning -Message "Path $PathToAdd is not valid"
+          break
+        }
+
         Write-Verbose -Message "Adding folder $PathToAdd to SYSTEM path"
         
         [string[]]$PathArray = ($env:path).split(';')
         [bool]$PathAlreadyExists = $false
+        [string]$FinalPath = $null
       
         Foreach ($Path in $PathArray) 
         {
@@ -129,7 +129,7 @@
           $Result = New-Object -TypeName PSObject -Property @{
             Output = $FinalPath
           }
-          [Environment]::SetEnvironmentVariable('path',$NewPath, 'Machine')
+          [Environment]::SetEnvironmentVariable('path',$FinalPath, 'Machine')
         }
         else 
         {
