@@ -1,4 +1,3 @@
-#requires -Version 2.0
 Function Set-WinXMenuItem 
 {
   <#
@@ -54,6 +53,7 @@ Function Set-WinXMenuItem
       .NOTES
       Author: Bevin Du Plessis
       Date: 28/08/2016
+      Credits: Uses hashlnk tool by Rafael Rivera https://github.com/riverar/hashlnk
 
       .LINK
       https://github.com/nightshade2109/powershellscripts
