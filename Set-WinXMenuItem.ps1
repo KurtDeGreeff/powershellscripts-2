@@ -225,6 +225,7 @@ Function Set-WinXMenuItem
           {
             if($ElevateShortcut) 
             {
+              $Name = "$Name (Admin)"
               $ShortcutPath = Join-Path -Path "$GroupPathName" -ChildPath "$Name (Admin).lnk"
             }
             else 
@@ -407,21 +408,7 @@ Function Set-WinXMenuItem
         }
       }
     }
-
-    $Result = $null
-    $Results = $null
-    $VersionResult = $null
-    $ScriptVersion = $null
-    $GroupPath = $null
-    $GroupPathName = $null
-    $Name = $null
-    $ApplicationPath = $null
-    $ElevateShortcut = $null
-    $Group = $null
-    $Arguments = $null
-    $Remove = $null
-    $Add = $null
-   
+  
   }
 
   End 
@@ -429,6 +416,4 @@ Function Set-WinXMenuItem
     Write-Verbose -Message "Ending $($MyInvocation.Mycommand)"
   }
 }
-
-#Set-WinXMenuItem -Add -ApplicationPath "$env:windir\system32\SnippingTool.exe" -Group Group3 -Name 'Snipping Tool' -ElevateShortcut
 
