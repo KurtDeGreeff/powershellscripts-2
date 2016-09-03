@@ -62,7 +62,7 @@ Function Create-StartMenuShortcut
 
     .EXAMPLE
     Create-StartMenuShortcut -Version
-    Describe what this call does
+    Returns script version
 
     .EXAMPLE
     Create-StartMenuShortcut -Name "Cmder" -Target "C:\Tools\Utilities\Cmder\Cmder.exe" -Folder "Cmder" -WorkingDirectory "C:\Tools" -Icon "C:\Tools\Utilities\Cmder\Cmder.exe" -IconIndex 0 -Description "Cmder Alternative Shell" -HotKey "CTRL+SHIFT+F1" -WindowStyle 1 -RelativePath "C:\Tools" -Force -Verbose -Debug
